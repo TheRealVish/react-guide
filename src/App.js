@@ -1,6 +1,23 @@
 import React, { Component } from 'react'
 import './App.css'
 import Person from './Person/Person'
+import styled from 'styled-components'
+
+
+const StyledButton = styled.button`
+  background-color: ${props => props.alt ? 'red' : 'blue' };
+  color: yellow;
+  font: inherit;
+  border: 1px solid blue;
+  padding: 8px;
+  cursor: pointer; 
+
+  &:hover {
+    background-color: lightgreen;
+    color: black;
+  }
+
+`
 
 class App extends Component {
   state = {
@@ -23,6 +40,7 @@ class App extends Component {
     } 
     )
   } */
+
 
   deleteNameHandler = (passedIndex) => {
     const passed = [...this.state.persons]
@@ -121,9 +139,9 @@ class App extends Component {
       <div className="App">
         <h1>Hi, I am a React App</h1>
         <p className={classes.join(' ')}>this is working</p>
-        <button 
-          style={style}
-          onClick={this.togglePersonsHandler}>Switch</button>
+        <StyledButton 
+          alt={this.state.showPersons}
+          onClick={this.togglePersonsHandler}>Switch</StyledButton>
          {persons}
       </div>
     )
