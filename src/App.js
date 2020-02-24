@@ -137,7 +137,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>Hi, I am a React App</h1>
+        <h1>Trying an example app</h1>
         <p className={classes.join(' ')}>this is working</p>
         <StyledButton 
           alt={this.state.showPersons}
